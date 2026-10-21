@@ -1,0 +1,2503 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprendedores en Acción 2026 | Secundario N° 43 "Puerto Argentino"</title>
+    <meta name="description"
+        content="Expo anual de emprendimientos estudiantiles del Colegio Secundario N° 43 Puerto Argentino. Viernes 13 de noviembre de 2026, 10 a 15 h, Av. Forestal 1185, Alto Comedero, Jujuy. Entrada libre y gratuita.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================================
+       COLORES — inspirados en el Cerro de los Siete Colores
+       y en Cami, el camaleón. Cambiá acá y cambia toda la página.
+       ========================================================= */
+        :root {
+            --verde: #1f8a4c;
+            /* camaleón */
+            --verde-2: #c8ecd5;
+            --ocre: #e3a13a;
+            /* cerro ocre */
+            --rosa: #c9577a;
+            /* cerro rosado */
+            --violeta: #6b4c9a;
+            /* cerro violeta */
+            --cielo: #2f8fbf;
+            /* cielo jujeño */
+
+            --fondo: #f3f8f5;
+            --papel: #ffffff;
+            --tinta: #17262e;
+            --suave: #4d5f68;
+            --linea: #d6e3dc;
+
+            --radio-l: 28px;
+            --radio-m: 18px;
+            --radio-s: 10px;
+            --display: 'Bricolage Grotesque', system-ui, sans-serif;
+            --texto: 'Figtree', system-ui, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --fondo: #0f1a17;
+                --papel: #16241f;
+                --tinta: #eaf3ee;
+                --suave: #a7bab1;
+                --linea: #29403a;
+                --verde: #4cc27e;
+                --verde-2: #1b3a2a;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --fondo: #0f1a17;
+            --papel: #16241f;
+            --tinta: #eaf3ee;
+            --suave: #a7bab1;
+            --linea: #29403a;
+            --verde: #4cc27e;
+            --verde-2: #1b3a2a;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 84px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--fondo);
+            color: var(--tinta);
+            font-family: var(--texto);
+            font-size: 17px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: clip;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--display);
+            line-height: 1.05;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--ocre);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        .wrap {
+            width: min(1160px, 100% - 32px);
+            margin-inline: auto;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+        }
+
+        /* Franja de colores del cerro (se repite como firma visual) */
+        .cerro {
+            height: 10px;
+            background: linear-gradient(90deg,
+                    var(--verde) 0 20%, var(--ocre) 20% 40%, var(--rosa) 40% 60%,
+                    var(--violeta) 60% 80%, var(--cielo) 80% 100%);
+        }
+
+        /* ---------- BOTONES ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .55em;
+            font: 700 1rem var(--texto);
+            text-decoration: none;
+            cursor: pointer;
+            padding: .85em 1.35em;
+            border-radius: 999px;
+            border: 2px solid transparent;
+            transition: transform .15s, background-color .15s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-verde {
+            background: var(--verde);
+            color: #fff;
+        }
+
+        .btn-verde:hover {
+            background: #17733e;
+        }
+
+        .btn-borde {
+            border-color: var(--tinta);
+            color: var(--tinta);
+            background: transparent;
+        }
+
+        .btn-borde:hover {
+            background: var(--tinta);
+            color: var(--fondo);
+        }
+
+        /* ---------- NAV ---------- */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: color-mix(in srgb, var(--fondo) 88%, transparent);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--linea);
+        }
+
+        .nav .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+            gap: 16px;
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .marca img {
+            width: 44px;
+            height: 44px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .marca strong {
+            font-family: var(--display);
+            font-size: 1.05rem;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .marca span {
+            font-size: .8rem;
+            color: var(--suave);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .95rem;
+            padding: .5em .85em;
+            border-radius: 999px;
+            color: var(--suave);
+        }
+
+        .nav-links a:hover {
+            color: var(--tinta);
+            background: var(--verde-2);
+        }
+
+        .nav-acciones {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--linea);
+            background: var(--papel);
+            color: var(--tinta);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #menuBtn {
+            display: none;
+        }
+
+        .menu-movil {
+            display: none;
+        }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+            }
+
+            #menuBtn {
+                display: inline-block;
+            }
+
+            .menu-movil.abierto {
+                display: grid;
+                gap: 4px;
+                padding: 8px 16px 20px;
+                border-top: 1px solid var(--linea);
+                background: var(--fondo);
+            }
+
+            .menu-movil a {
+                text-decoration: none;
+                font-weight: 600;
+                padding: 12px 8px;
+                border-radius: 10px;
+            }
+
+            .menu-movil a:hover {
+                background: var(--verde-2);
+            }
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            padding: 56px 0 0;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr .9fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-sello {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: .95rem;
+            background: var(--papel);
+            border: 1px solid var(--linea);
+            border-radius: 999px;
+            padding: 6px 14px 6px 6px;
+        }
+
+        .hero-sello img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8.5vw, 6.4rem);
+            font-weight: 800;
+            margin: 22px 0 18px;
+            letter-spacing: -0.04em;
+            line-height: .92;
+        }
+
+        .lema {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .lema span {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+            padding: .25em .8em;
+            border-radius: 999px;
+            color: #fff;
+        }
+
+        .lema span:nth-child(1) {
+            background: var(--verde);
+        }
+
+        .lema span:nth-child(2) {
+            background: var(--rosa);
+        }
+
+        .lema span:nth-child(3) {
+            background: var(--violeta);
+        }
+
+        .hero-intro {
+            color: var(--suave);
+            max-width: 56ch;
+            font-size: 1.1rem;
+        }
+
+        .hero-intro em {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--tinta);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        /* Tarjeta del evento con la mascota */
+        .ficha {
+            position: relative;
+            background: var(--papel);
+            border-radius: var(--radio-l);
+            border: 1px solid var(--linea);
+            padding: 64px 22px 22px;
+            box-shadow: 0 30px 60px -30px rgba(23, 38, 46, .35);
+        }
+
+        .ficha-mascota {
+            background: var(--verde-2);
+            border-radius: var(--radio-m);
+            aspect-ratio: 1 / 1;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .ficha-mascota img {
+            width: 88%;
+            height: 88%;
+            object-fit: contain;
+            transform-origin: bottom center;
+        }
+
+        .ficha-fecha {
+            position: absolute;
+            top: -26px;
+            right: 22px;
+            z-index: 2;
+            background: var(--ocre);
+            color: #2b1a00;
+            border-radius: 18px;
+            padding: 8px 16px;
+            text-align: center;
+            transform: rotate(4deg);
+            font-family: var(--display);
+            box-shadow: 0 10px 20px -10px rgba(0, 0, 0, .4);
+        }
+
+        .ficha-fecha b {
+            display: block;
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+
+        .ficha-fecha small {
+            display: block;
+            font-weight: 700;
+            font-size: .8rem;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        .ficha-titulo {
+            position: absolute;
+            top: 20px;
+            left: 22px;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .ficha dl {
+            display: grid;
+            gap: 12px;
+            margin: 18px 0 0;
+        }
+
+        .ficha dl div {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .ficha dt {
+            width: 36px;
+            height: 36px;
+            flex: none;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            color: #fff;
+        }
+
+        .ficha dd {
+            margin: 0;
+            font-size: .95rem;
+            line-height: 1.35;
+        }
+
+        .ficha dd strong {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .ficha dd span {
+            color: var(--suave);
+        }
+
+        .hero-cerro {
+            margin-top: 64px;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 860px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .ficha {
+                max-width: 420px;
+                margin-inline: auto;
+            }
+        }
+
+        /* Única animación de entrada: el camaleón "aparece" */
+        @media (prefers-reduced-motion: no-preference) {
+
+            .hero h1,
+            .lema,
+            .hero-intro,
+            .hero-cta {
+                animation: subir .7s cubic-bezier(.2, .7, .2, 1) both;
+            }
+
+            .lema {
+                animation-delay: .08s;
+            }
+
+            .hero-intro {
+                animation-delay: .16s;
+            }
+
+            .hero-cta {
+                animation-delay: .24s;
+            }
+
+            .ficha-mascota img {
+                animation: asomar 1s .3s cubic-bezier(.2, .8, .2, 1) both;
+            }
+
+            @keyframes subir {
+                from {
+                    opacity: 0;
+                    transform: translateY(18px);
+                }
+            }
+
+            @keyframes asomar {
+                from {
+                    opacity: 0;
+                    transform: translateY(40%) scale(.9);
+                }
+            }
+        }
+
+        /* ---------- SECCIONES ---------- */
+        section {
+            padding: 88px 0;
+        }
+
+        .titulo {
+            max-width: 680px;
+            margin-bottom: 40px;
+        }
+
+        .titulo h2 {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800;
+        }
+
+        .titulo p {
+            color: var(--suave);
+            margin-top: 12px;
+            font-size: 1.08rem;
+        }
+
+        /* ---------- STANDS ---------- */
+        .filtros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .filtro {
+            font: 600 .95rem var(--texto);
+            padding: .6em 1.1em;
+            border-radius: 999px;
+            cursor: pointer;
+            border: 2px solid var(--linea);
+            background: var(--papel);
+            color: var(--tinta);
+            display: inline-flex;
+            align-items: center;
+            gap: .5em;
+        }
+
+        .filtro i {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--c, var(--tinta));
+        }
+
+        .filtro[aria-pressed="true"] {
+            background: var(--tinta);
+            color: var(--fondo);
+            border-color: var(--tinta);
+        }
+
+        .stands {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .stand {
+            background: var(--papel);
+            border: 1px solid var(--linea);
+            border-radius: var(--radio-m);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border-top: 6px solid var(--c);
+        }
+
+        .stand[hidden] {
+            display: none;
+        }
+
+        .stand-foto {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            background: var(--verde-2);
+            overflow: hidden;
+        }
+
+        .stand-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+        }
+
+        .stand:hover .stand-foto img {
+            transform: scale(1.05);
+        }
+
+        .stand-num {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            background: var(--papel);
+            color: var(--tinta);
+            font-family: var(--display);
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 4px 12px;
+            border-radius: 999px;
+        }
+
+        .stand-cuerpo {
+            padding: 18px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .stand-cat {
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--c);
+        }
+
+        .stand h3 {
+            font-size: 1.45rem;
+            font-weight: 700;
+        }
+
+        .stand p {
+            color: var(--suave);
+            font-size: .97rem;
+        }
+
+        .stand-pie {
+            margin-top: auto;
+            padding-top: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px dashed var(--linea);
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .fav {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--linea);
+            background: transparent;
+            color: var(--suave);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .fav[aria-pressed="true"] {
+            color: #fff;
+            background: var(--rosa);
+            border-color: var(--rosa);
+        }
+
+        .fav[aria-pressed="true"] i {
+            animation: latido .35s;
+        }
+
+        @keyframes latido {
+            50% {
+                transform: scale(1.35);
+            }
+        }
+
+        .contador-favs {
+            margin-top: 20px;
+            color: var(--suave);
+            font-size: .95rem;
+            min-height: 1.5em;
+        }
+
+        /* ---------- CUENTA REGRESIVA ---------- */
+        .cuenta {
+            background: var(--violeta);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cuenta .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .cuenta h2 {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800;
+        }
+
+        .cuenta p {
+            opacity: .88;
+            margin-top: 12px;
+        }
+
+        .reloj {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .reloj div {
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .22);
+            border-radius: var(--radio-m);
+            padding: 18px 8px;
+            text-align: center;
+        }
+
+        .reloj b {
+            display: block;
+            font-family: var(--display);
+            font-weight: 800;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .reloj span {
+            font-size: .9rem;
+            opacity: .85;
+        }
+
+        .gratis {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 22px;
+            background: var(--ocre);
+            color: #2b1a00;
+            font-weight: 700;
+            padding: .6em 1.1em;
+            border-radius: 999px;
+        }
+
+        @media (max-width: 860px) {
+            .cuenta .wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .reloj {
+                gap: 6px;
+            }
+
+            .reloj div {
+                padding: 14px 4px;
+            }
+        }
+
+        /* ---------- UBICACIÓN ---------- */
+        .ubic {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .bloque {
+            background: var(--papel);
+            border: 1px solid var(--linea);
+            border-radius: var(--radio-m);
+            padding: 26px;
+        }
+
+        .bloque+.bloque {
+            margin-top: 20px;
+        }
+
+        .bloque h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .bloque h3 i {
+            color: var(--verde);
+        }
+
+        .direccion {
+            font-size: 1.15rem;
+        }
+
+        .direccion strong {
+            font-family: var(--display);
+            font-size: 1.5rem;
+            display: block;
+        }
+
+        .lineas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 14px 0 16px;
+        }
+
+        .lineas span {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--cielo);
+            color: #fff;
+            font-family: var(--display);
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .nota {
+            background: color-mix(in srgb, var(--ocre) 18%, var(--papel));
+            border-radius: var(--radio-s);
+            padding: 12px 14px;
+            font-size: .95rem;
+        }
+
+        .mapa {
+            border-radius: var(--radio-m);
+            overflow: hidden;
+            border: 1px solid var(--linea);
+            min-height: 420px;
+            background: var(--verde-2);
+        }
+
+        .mapa iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            border: 0;
+            display: block;
+        }
+
+        @media (max-width: 860px) {
+            .ubic {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---------- CORAZONES CON CONTADOR ---------- */
+        .fav-caja {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .fav-num {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1rem;
+            min-width: 1.5ch;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .fav-num:empty {
+            display: none;
+        }
+
+        /* ---------- ESTRELLAS: GANAS DE PROBAR ---------- */
+        .ganas {
+            display: grid;
+            gap: 4px;
+            padding: 12px 14px;
+            margin-top: 4px;
+            border-radius: var(--radio-s);
+            background: color-mix(in srgb, var(--ocre) 10%, var(--papel));
+        }
+
+        .ganas-titulo {
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--suave);
+        }
+
+        .ganas-fila {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Las estrellas van en orden inverso para que al pasar el mouse se pinten todas las anteriores */
+        .estrellas {
+            display: inline-flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .estrellas button {
+            background: none;
+            border: 0;
+            padding: 2px 3px;
+            cursor: pointer;
+            font-size: 1.7rem;
+            line-height: 1;
+            color: var(--linea);
+            transition: transform .12s, color .12s;
+        }
+
+        .estrellas button.on {
+            color: var(--ocre);
+        }
+
+        .estrellas:hover button {
+            color: var(--linea);
+        }
+
+        .estrellas button:hover,
+        .estrellas button:hover~button {
+            color: var(--ocre);
+            transform: scale(1.12);
+        }
+
+        .estrellas button.salto {
+            animation: latido .35s;
+        }
+
+        .promedio {
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--suave);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .promedio b {
+            font-family: var(--display);
+            font-size: 1.15rem;
+            color: var(--tinta);
+        }
+
+        /* ---------- RANKING: LO QUE MÁS QUIEREN PROBAR ---------- */
+        .ranking {
+            background: var(--papel);
+            border: 1px solid var(--linea);
+            border-radius: var(--radio-m);
+            padding: 24px 26px;
+            margin-bottom: 32px;
+        }
+
+        .ranking[hidden] {
+            display: none;
+        }
+
+        .ranking h3 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ranking h3 i {
+            color: var(--ocre);
+        }
+
+        .ranking>p {
+            color: var(--suave);
+            margin: 6px 0 18px;
+            font-size: .97rem;
+        }
+
+        .ranking ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .rank-fila {
+            display: grid;
+            grid-template-columns: 40px minmax(0, 1fr) auto;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .rank-pos {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-family: var(--display);
+            font-weight: 800;
+            background: var(--fondo);
+            border: 2px solid var(--linea);
+        }
+
+        .rank-fila:nth-child(1) .rank-pos { background: var(--ocre); border-color: var(--ocre); color: #2b1a00; }
+        .rank-fila:nth-child(2) .rank-pos { background: #c9d3d8; border-color: #c9d3d8; color: #17262e; }
+        .rank-fila:nth-child(3) .rank-pos { background: #d39a6a; border-color: #d39a6a; color: #2b1a00; }
+
+        .rank-nombre {
+            font-weight: 700;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .rank-barra {
+            height: 10px;
+            border-radius: 99px;
+            background: var(--fondo);
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .rank-barra span {
+            display: block;
+            height: 100%;
+            width: var(--w, 0%);
+            background: var(--c);
+            border-radius: inherit;
+            transition: width .8s cubic-bezier(.2, .7, .2, 1);
+        }
+
+        .rank-num {
+            text-align: right;
+            line-height: 1.1;
+        }
+
+        .rank-num b {
+            font-family: var(--display);
+            font-size: 1.3rem;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .rank-num b i {
+            color: var(--ocre);
+            font-size: 1rem;
+            margin-right: 4px;
+        }
+
+        .rank-num small {
+            display: block;
+            color: var(--suave);
+            font-size: .8rem;
+        }
+
+        .stand-medalla {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--ocre);
+            color: #2b1a00;
+            font-weight: 800;
+            font-size: .85rem;
+            padding: 5px 12px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 6px 14px -6px rgba(0, 0, 0, .4);
+        }
+
+        .stand-medalla[hidden] {
+            display: none;
+        }
+
+        /* ---------- REGISTRO DE ASISTENCIA ---------- */
+        .registro-zona {
+            background: var(--verde-2);
+        }
+
+        .registro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .form {
+            display: grid;
+            gap: 18px;
+            background: var(--papel);
+            border: 1px solid var(--linea);
+            border-radius: var(--radio-m);
+            padding: 28px;
+        }
+
+        .form label,
+        .form legend {
+            font-weight: 700;
+            font-size: .95rem;
+        }
+
+        .form label {
+            display: grid;
+            gap: 6px;
+        }
+
+        .form input[type="text"] {
+            font: 500 1rem var(--texto);
+            padding: .85em 1em;
+            border-radius: var(--radio-s);
+            border: 2px solid var(--linea);
+            background: var(--fondo);
+            color: var(--tinta);
+        }
+
+        .form input[type="text"]:focus {
+            border-color: var(--verde);
+            outline: none;
+        }
+
+        .form fieldset {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 8px;
+        }
+
+        .form legend {
+            margin-bottom: 8px;
+        }
+
+        .form .opcion {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border: 2px solid var(--linea);
+            border-radius: var(--radio-s);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .form .opcion input {
+            accent-color: var(--verde);
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+
+        .opcion:has(input:checked) {
+            border-color: var(--verde);
+            background: color-mix(in srgb, var(--verde) 10%, var(--papel));
+        }
+
+        .form .btn {
+            justify-self: start;
+        }
+
+        .form-msg {
+            font-weight: 600;
+            min-height: 1.4em;
+        }
+
+        .form-msg.ok {
+            color: var(--verde);
+        }
+
+        .form-msg.error {
+            color: var(--rosa);
+        }
+
+        .totales {
+            display: grid;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .total-fila {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 12px 0;
+            border-bottom: 1px solid color-mix(in srgb, var(--tinta) 15%, transparent);
+        }
+
+        .total-fila b {
+            font-family: var(--display);
+            font-size: 1.8rem;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .total-fila.grande b {
+            font-size: 3rem;
+            color: var(--verde);
+        }
+
+        .totales[hidden] {
+            display: none;
+        }
+
+        @media (max-width: 860px) {
+            .registro {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+
+        /* ---------- EFECTOS DE SCROLL ---------- */
+        .progreso {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            z-index: 60;
+            pointer-events: none;
+            transform-origin: left;
+            transform: scaleX(var(--p, 0));
+            background: linear-gradient(90deg, var(--verde), var(--ocre), var(--rosa), var(--violeta), var(--cielo));
+        }
+
+        .hero-cerro path {
+            transition: none;
+            will-change: transform;
+        }
+
+        .anim .revelar {
+            opacity: 0;
+            transform: translateY(36px) scale(.98);
+            transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1);
+            transition-delay: var(--d, 0s);
+        }
+
+        .anim .revelar.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .anim .titulo h2 {
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path .9s cubic-bezier(.6, 0, .2, 1);
+        }
+
+        .anim .titulo.visible h2 {
+            clip-path: inset(0 0 0 0);
+        }
+
+        /* ---------- FAQ ---------- */
+        .faq {
+            max-width: 780px;
+        }
+
+        .faq details {
+            border-bottom: 1px solid var(--linea);
+            overflow: hidden;
+        }
+
+        .faq summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 22px 0;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 16px;
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq summary::after {
+            content: '+';
+            font-size: 1.6rem;
+            line-height: 1;
+            color: var(--verde);
+            transition: transform .2s;
+        }
+
+        .faq details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq details p {
+            padding: 0 0 22px;
+            color: var(--suave);
+            max-width: 64ch;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--tinta);
+            color: #cfdcd6;
+            padding: 56px 0 28px;
+        }
+
+        :root[data-theme="dark"] footer {
+            background: #0a1210;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) footer {
+                background: #0a1210;
+            }
+        }
+
+        .pie-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        footer h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: .95rem;
+            margin-bottom: 6px;
+        }
+
+        .logos {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .logos img {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .redes {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .redes a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 255, 255, .08);
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .redes a:hover {
+            background: var(--verde);
+        }
+
+        .pie-final {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+            font-size: .85rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        @media (max-width: 760px) {
+            .pie-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* ---------- ESCUDO DEL COLEGIO ---------- */
+        /* En el menú: más grande y sin recortar */
+        .marca .marca-escudo {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border-radius: 0;
+        }
+
+        /* En la portada: uno solo, grande, de fondo y casi transparente (marca de agua) */
+        .hero {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .hero-escudo {
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 34%;
+            width: min(780px, 80vw);
+            translate: -50% -52%;
+            rotate: -8deg;
+            opacity: .06;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        :root[data-theme="dark"] .hero-escudo {
+            opacity: .06;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .hero-escudo {
+                opacity: .06;
+            }
+        }
+
+
+        @media (max-width: 860px) {
+            .hero-escudo {
+                top: 22%;
+                left: 50%;
+                width: 120vw;
+            }
+        }
+
+        /* ---------- TARJETA: VER MENÚ ---------- */
+        .stand {
+            cursor: pointer;
+            transition: box-shadow .25s, translate .25s;
+        }
+
+        .stand:hover {
+            translate: 0 -3px;
+            box-shadow: 0 18px 36px -22px rgba(23, 38, 46, .45);
+        }
+
+        .ver-menu {
+            justify-self: start;
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: .5em;
+            font: 700 .9rem var(--texto);
+            color: var(--tinta);
+            background: transparent;
+            border: 2px solid var(--c);
+            border-radius: 999px;
+            padding: .45em 1em;
+            cursor: pointer;
+            transition: background-color .15s, color .15s;
+        }
+
+        .ver-menu:hover {
+            background: var(--c);
+            color: #fff;
+        }
+
+        /* ---------- MODAL ---------- */
+        .modal {
+            border: 0;
+            padding: 0;
+            background: transparent;
+            max-width: none;
+            max-height: none;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .modal:not([open]) {
+            display: none;
+        }
+
+        .modal::backdrop {
+            background: rgba(15, 26, 23, .55);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .con-modal {
+            overflow: hidden;
+        }
+
+        .modal-caja {
+            position: relative;
+            width: min(760px, 100% - 32px);
+            max-height: calc(100dvh - 48px);
+            display: flex;
+            background: var(--papel);
+            color: var(--tinta);
+            border-radius: var(--radio-l);
+            border-top: 8px solid var(--c);
+            box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .5);
+            overflow: hidden;
+        }
+
+        .modal-cuerpo {
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            width: 100%;
+        }
+
+        .modal-foto {
+            aspect-ratio: 16 / 9;
+            background: var(--verde-2);
+        }
+
+        .modal-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            padding: 24px 28px 28px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .modal-cat {
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--c);
+        }
+
+        .modal-info h2 {
+            font-size: clamp(1.9rem, 5vw, 2.6rem);
+            font-weight: 800;
+        }
+
+        .modal-info>p {
+            color: var(--suave);
+        }
+
+        .modal-sub {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--linea);
+        }
+
+        .m-pendiente {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            padding: 16px 18px;
+            border-radius: var(--radio-s);
+            background: color-mix(in srgb, var(--ocre) 14%, var(--papel));
+        }
+
+        .m-pendiente i {
+            color: var(--ocre);
+            font-size: 1.2rem;
+        }
+
+        .m-precios {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+        }
+
+        .m-precios li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--linea);
+            font-weight: 600;
+        }
+
+        .m-precios b {
+            font-family: var(--display);
+            font-size: 1.25rem;
+            white-space: nowrap;
+            color: var(--c);
+        }
+
+        .m-menu-img {
+            display: block;
+            margin-top: 14px;
+            border-radius: var(--radio-m);
+            overflow: hidden;
+            border: 1px solid var(--linea);
+        }
+
+        .m-menu-img img {
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-equipo {
+            margin-top: 8px;
+            font-weight: 600;
+            color: var(--suave);
+        }
+
+        .modal-cerrar {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 2;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 0;
+            background: var(--papel);
+            color: var(--tinta);
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 6px 16px -6px rgba(0, 0, 0, .45);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .modal[open] .modal-caja {
+                animation: modalEntra .38s cubic-bezier(.2, .8, .2, 1);
+            }
+
+            .modal[open]::backdrop {
+                animation: fondoEntra .3s ease-out;
+            }
+
+            .modal.cerrando .modal-caja {
+                animation: modalSale .22s ease-in forwards;
+            }
+
+            .modal.cerrando::backdrop {
+                animation: fondoSale .22s ease-in forwards;
+            }
+
+            @keyframes modalEntra {
+                from { opacity: 0; transform: translateY(28px) scale(.96); }
+            }
+
+            @keyframes modalSale {
+                to { opacity: 0; transform: translateY(16px) scale(.97); }
+            }
+
+            @keyframes fondoEntra {
+                from { opacity: 0; }
+            }
+
+            @keyframes fondoSale {
+                to { opacity: 0; }
+            }
+        }
+
+        @media (max-width: 600px) {
+            .modal {
+                place-items: end center;
+            }
+
+            .modal-caja {
+                width: 100%;
+                max-height: 92dvh;
+                border-radius: var(--radio-l) var(--radio-l) 0 0;
+            }
+
+            .modal-info {
+                padding: 20px 18px 28px;
+            }
+
+            @media (prefers-reduced-motion: no-preference) {
+                @keyframes modalEntra {
+                    from { transform: translateY(100%); }
+                }
+
+                @keyframes modalSale {
+                    to { transform: translateY(100%); }
+                }
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progreso" id="progreso" aria-hidden="true"></div>
+
+    <div class="cerro" aria-hidden="true"></div>
+
+    <!-- ===================== NAVEGACIÓN ===================== -->
+    <header class="nav">
+        <div class="wrap">
+            <a href="#inicio" class="marca">
+                <img class="marca-escudo" src="img/escudo.png" alt="Escudo del Colegio Secundario N° 43"
+                    onerror="this.onerror=null;this.src='https://placehold.co/88x88/1f8a4c/ffffff?text=43';">
+                <div>
+                    <strong>Emprendedores en Acción</strong>
+                    <span>Secundario N° 43 · Expo 2026</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" aria-label="Secciones">
+                <a href="#stands">Stands</a>
+                <a href="#cuenta">Cuánto falta</a>
+                <a href="#registro">Anotate</a>
+                <a href="#ubicacion">Cómo llegar</a>
+                <a href="#faq">Preguntas</a>
+            </nav>
+
+            <div class="nav-acciones">
+                <button class="icon-btn" id="temaBtn" aria-label="Cambiar a modo oscuro"><i
+                        class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false"
+                    aria-controls="menuMovil"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <nav class="menu-movil" id="menuMovil" aria-label="Secciones">
+            <a href="#stands">Stands</a>
+            <a href="#cuenta">Cuánto falta</a>
+            <a href="#registro">Anotate</a>
+            <a href="#ubicacion">Cómo llegar</a>
+            <a href="#faq">Preguntas</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===================== PORTADA ===================== -->
+        <section class="hero" id="inicio" style="padding-bottom:0">
+            <img class="hero-escudo" src="img/escudo.png" alt="" aria-hidden="true">
+            <div class="wrap hero-grid">
+                <div>
+                    <span class="hero-sello">
+                        <img src="img/IMG-20261013-WA0002.jpg" alt=""
+                            onerror="this.onerror=null;this.src='https://placehold.co/56x56/c9577a/ffffff?text=43';">
+                        Expo anual de Los Camaleones
+                    </span>
+
+                    <h1>Emprendedores en Acción</h1>
+
+                    <div class="lema" aria-label="Crea, innova, persevera">
+                        <span>Crea</span><span>Innova</span><span>Persevera</span>
+                    </div>
+
+                    <p class="hero-intro">
+                        La fórmula del emprendedor, puesta a prueba por los estudiantes del
+                        <em>Colegio Secundario N° 43 "Puerto Argentino"</em>: once stands con comida,
+                        licuados, repostería, flores y mucho más, todos pensados y armados por ellos.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#stands" class="btn btn-verde"><i class="fa-solid fa-store"></i> Ver los stands</a>
+                        <a href="#ubicacion" class="btn btn-borde"><i class="fa-solid fa-bus"></i> Cómo llegar</a>
+                    </div>
+                </div>
+
+                <aside class="ficha" aria-label="Datos del evento">
+                    <span class="ficha-titulo">Te espera Cami</span>
+                    <div class="ficha-fecha"><b>13</b><small>Vie · Nov</small></div>
+                    <div class="ficha-mascota">
+                        <img src="img/IMG-20261014-WA0006.jpg" alt="Cami, el camaleón mascota del colegio"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/c8ecd5/1f8a4c?text=Cami';">
+                    </div>
+                    <dl>
+                        <div>
+                            <dt style="background:var(--verde)"><i class="fa-regular fa-clock"></i></dt>
+                            <dd><strong>10 a 15 h</strong><span>Viernes 13 de noviembre de 2026</span></dd>
+                        </div>
+                        <div>
+                            <dt style="background:var(--cielo)"><i class="fa-solid fa-location-dot"></i></dt>
+                            <dd><strong>Av. Forestal 1185</strong><span>B° Alto Comedero, San Salvador de Jujuy</span>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt style="background:var(--rosa)"><i class="fa-brands fa-instagram"></i></dt>
+                            <dd><strong>@secu43loscamaleones</strong><span>Novedades y fotos de la expo</span></dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+
+            <!-- Cerro de los Siete Colores, en franjas -->
+            <svg class="hero-cerro" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 160 L0 70 C180 30 300 90 480 60 C660 30 760 0 940 40 C1120 80 1260 20 1440 50 L1440 160 Z"
+                    fill="var(--cielo)" />
+                <path
+                    d="M0 160 L0 90 C200 55 320 110 500 82 C680 54 790 28 960 64 C1130 100 1270 46 1440 72 L1440 160 Z"
+                    fill="var(--violeta)" />
+                <path
+                    d="M0 160 L0 108 C210 78 340 128 520 102 C700 76 810 54 980 86 C1150 118 1280 70 1440 92 L1440 160 Z"
+                    fill="var(--rosa)" />
+                <path
+                    d="M0 160 L0 126 C220 100 360 144 540 120 C720 96 830 78 1000 106 C1170 134 1290 92 1440 112 L1440 160 Z"
+                    fill="var(--ocre)" />
+                <path
+                    d="M0 160 L0 142 C230 122 380 158 560 138 C740 118 850 102 1020 126 C1190 150 1300 114 1440 130 L1440 160 Z"
+                    fill="var(--verde)" />
+            </svg>
+        </section>
+
+        <!-- ===================== STANDS ===================== -->
+        <section id="stands">
+            <div class="wrap">
+                <div class="titulo">
+                    <h2>Los <span id="cantStands">10</span> stands de la muestra</h2>
+                    <p>Puntuá con estrellas cuántas ganas tenés de probar cada stand: 5 estrellas es "¡lo quiero
+                        probar sí o sí!". Con los votos de todos armamos el ranking. Y con el corazón guardás tus
+                        favoritos.</p>
+                </div>
+
+                <div class="ranking revelar" id="ranking" hidden>
+                    <h3><i class="fa-solid fa-trophy"></i> Lo que más quieren probar</h3>
+                    <p>Promedio de estrellas de todos los visitantes. Se actualiza en vivo.</p>
+                    <ol id="rankingLista"></ol>
+                </div>
+
+                <div class="filtros" role="group" aria-label="Filtrar stands">
+                    <button class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+                    <button class="filtro" data-filtro="gastro" aria-pressed="false"
+                        style="--c:var(--ocre)"><i></i>Comida</button>
+                    <button class="filtro" data-filtro="dulce" aria-pressed="false"
+                        style="--c:var(--rosa)"><i></i>Dulces</button>
+                    <button class="filtro" data-filtro="bebidas" aria-pressed="false"
+                        style="--c:var(--cielo)"><i></i>Bebidas y helados</button>
+                    <button class="filtro" data-filtro="arte" aria-pressed="false"
+                        style="--c:var(--violeta)"><i></i>Flores y regalos</button>
+                </div>
+
+                <div class="stands" id="listaStands"><!-- se completa desde el script (lista STANDS) --></div>
+                <p class="contador-favs" id="contadorFavs" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <!-- ===================== CUENTA REGRESIVA ===================== -->
+        <section class="cuenta" id="cuenta">
+            <div class="wrap">
+                <div>
+                    <h2 id="cuentaTitulo">Falta poco para abrir</h2>
+                    <p>Abrimos las puertas el viernes 13 de noviembre a las 10 de la mañana.</p>
+                    <span class="gratis"><i class="fa-solid fa-ticket"></i> Entrada libre y gratuita</span>
+                </div>
+                <div class="reloj revelar" aria-live="off">
+                    <div><b id="cd-dias">00</b><span>días</span></div>
+                    <div><b id="cd-horas">00</b><span>horas</span></div>
+                    <div><b id="cd-min">00</b><span>minutos</span></div>
+                    <div><b id="cd-seg">00</b><span>segundos</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== REGISTRO DE ASISTENCIA ===================== -->
+        <section class="registro-zona" id="registro">
+            <div class="wrap registro">
+                <div>
+                    <div class="titulo" style="margin-bottom:0">
+                        <h2>¿Venís? Anotate</h2>
+                        <p>Dejanos tu nombre así sabemos cuánta gente esperar. No pedimos teléfono ni correo.</p>
+                    </div>
+                    <div class="totales" id="totales" aria-live="polite" hidden>
+                        <div class="total-fila grande"><span>Ya se anotaron</span><b id="tot-todos">–</b></div>
+                        <div class="total-fila"><span>Comunidad educativa</span><b id="tot-comunidad">–</b></div>
+                        <div class="total-fila"><span>Alumnos y alumnas</span><b id="tot-alumno">–</b></div>
+                        <div class="total-fila"><span>Público en general</span><b id="tot-publico">–</b></div>
+                    </div>
+                </div>
+
+                <form class="form revelar" id="formRegistro" novalidate>
+                    <label>Nombre y apellido
+                        <input type="text" id="regNombre" required minlength="2" maxlength="60"
+                            placeholder="Ej: María González" autocomplete="name">
+                    </label>
+                    <fieldset>
+                        <legend>Venís como</legend>
+                        <label class="opcion"><input type="radio" name="tipo" value="comunidad" required> Comunidad
+                            educativa (familias, docentes, personal)</label>
+                        <label class="opcion"><input type="radio" name="tipo" value="alumno"> Alumno o alumna</label>
+                        <label class="opcion"><input type="radio" name="tipo" value="publico"> Público en
+                            general</label>
+                    </fieldset>
+                    <button type="submit" class="btn btn-verde" id="regBtn"><i class="fa-solid fa-user-check"></i>
+                        Confirmar asistencia</button>
+                    <p class="form-msg" id="regMsg" role="status"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- ===================== UBICACIÓN ===================== -->
+        <section id="ubicacion">
+            <div class="wrap">
+                <div class="titulo">
+                    <h2>Cómo llegar</h2>
+                    <p>Estamos en Alto Comedero, sobre Av. Forestal.</p>
+                </div>
+
+                <div class="ubic">
+                    <div>
+                        <div class="bloque revelar">
+                            <h3><i class="fa-solid fa-school"></i> Dirección</h3>
+                            <p class="direccion"><strong>Av. Forestal 1185</strong>Barrio Alto Comedero, San Salvador de
+                                Jujuy</p>
+                            <p style="margin-top:14px">
+                                <a class="btn btn-verde" href="https://maps.app.goo.gl/jNkBePiTG3oeEaPM6"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-diamond-turn-right"></i> Abrir en Google Maps
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="bloque revelar">
+                            <h3><i class="fa-solid fa-bus"></i> Colectivos</h3>
+                            <p>Estas líneas te dejan cerca:</p>
+                            <div class="lineas">
+                                <span>1</span><span>3</span><span>7</span><span>22</span><span>48</span>
+                            </div>
+                            <p class="nota"><i class="fa-solid fa-person-walking"></i> Bajate en Av. Forestal y Teniente
+                                López.</p>
+                        </div>
+                    </div>
+
+                    <div class="mapa revelar">
+                        <iframe title="Mapa del Colegio Secundario N° 43"
+                            src="https://www.google.com/maps?q=Av.+Forestal+1185,+Alto+Comedero,+San+Salvador+de+Jujuy&output=embed"
+                            loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PREGUNTAS ===================== -->
+        <section id="faq">
+            <div class="wrap">
+                <div class="titulo">
+                    <h2>Preguntas frecuentes</h2>
+                </div>
+                <div class="faq revelar">
+                    <details open>
+                        <summary>¿Cuándo es y cuánto cuesta entrar?</summary>
+                        <p>El viernes 13 de noviembre de 2026, de 10 a 15 h. La entrada es libre y gratuita para toda la
+                            comunidad.</p>
+                    </details>
+                    <details>
+                        <summary>¿Qué colectivos me dejan cerca?</summary>
+                        <p>Las líneas 1, 3, 7, 22 y 48. Bajate en Av. Forestal y Teniente López, en Alto Comedero.</p>
+                    </details>
+                    <details>
+                        <summary>¿Puedo pagar con Mercado Pago?</summary>
+                        <p>Sí, en la mayoría de los stands vas a poder pagar en efectivo o por transferencia con QR de
+                            Mercado Pago.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================== PIE ===================== -->
+    <footer>
+        <div class="wrap">
+            <div class="pie-grid">
+                <div>
+                    <div class="logos">
+                        <img src="img/escudo.png" alt="Escudo del colegio" style="object-fit:contain;border-radius:0;width:60px;height:60px"
+                            onerror="this.onerror=null;this.src='https://placehold.co/96x96/1f8a4c/ffffff?text=43';">
+                        <img src="img/IMG-20261013-WA0002.jpg" alt="Logo Los Camaleones"
+                            onerror="this.onerror=null;this.src='https://placehold.co/96x96/c9577a/ffffff?text=LC';">
+                    </div>
+                    <h3>Colegio Secundario N° 43 "Puerto Argentino"</h3>
+                    <p>Expo Emprendedores en Acción: crea, innova, persevera. Educación emprendedora y compromiso
+                        estudiantil en Jujuy.</p>
+                </div>
+                <div>
+                    <h3>Dónde estamos</h3>
+                    <p>Av. Forestal 1185, Alto Comedero</p>
+                    <p>San Salvador de Jujuy</p>
+                    <p>Colectivos 1, 3, 7, 22 y 48</p>
+                </div>
+                <div>
+                    <h3>Seguinos</h3>
+                    <p>@secu43loscamaleones</p>
+                    <div class="redes">
+                        <a href="https://instagram.com/secu43loscamaleones" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pie-final">
+                <span>© 2026 Emprendedores en Acción · Secundario N° 43 "Puerto Argentino"</span>
+                <span>San Salvador de Jujuy, Argentina</span>
+            </div>
+        </div>
+    </footer>
+    <div class="cerro" aria-hidden="true"></div>
+
+    <!-- ===================== MODAL DEL STAND ===================== -->
+    <dialog class="modal" id="modalStand" aria-labelledby="mTitulo">
+        <div class="modal-caja">
+            <button type="button" class="modal-cerrar" id="mCerrar" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-cuerpo">
+                <div class="modal-foto"><img id="mFoto" alt=""></div>
+                <div class="modal-info">
+                    <span class="modal-cat" id="mCat"></span>
+                    <h2 id="mTitulo"></h2>
+                    <p id="mTexto"></p>
+                    <h3 class="modal-sub">Menú</h3>
+                    <div id="mMenu"></div>
+                    <p class="modal-equipo"><i class="fa-solid fa-users"></i> <span id="mEquipo"></span></p>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <script type="module">
+        /* =========================================================
+           FIREBASE — pegá acá los datos de tu proyecto.
+           Mientras apiKey esté vacío, la página funciona igual:
+           los corazones se guardan solo en cada celular y el
+           registro avisa que todavía no está conectado.
+           ========================================================= */
+        const FIREBASE_CONFIG = {
+            apiKey: "AIzaSyDEnur8leWNUDgned8BSzr3rEtoepcF40c",
+            authDomain: "expo-secu43.firebaseapp.com",
+            databaseURL: "https://expo-secu43-default-rtdb.firebaseio.com",
+            projectId: "expo-secu43",
+            storageBucket: "expo-secu43.firebasestorage.app",
+            messagingSenderId: "961749917251",
+            appId: "1:961749917251:web:d5b84566c7f6fe4a893ef6",
+            measurementId: "G-HCDZ3501CB"
+        };
+
+        /* =========================================================
+           STANDS — para agregar, sacar o cambiar un stand,
+           editá esta lista. categorias: gastro, dulce, bebidas, arte
+           Para sumar el menú de un stand, agregale:
+             menu: { imagen: 'img/stand/MenuX.jpg', items: [['Producto', '$precio'], ...] }
+           Si no tiene "menu", el modal dice que se publicará en breve.
+           ========================================================= */
+        const STANDS = [
+            {
+                nombre: 'Jabones Artesanales', foto: 'img/stand/ComidaSaludable.jpeg', cats: ['gastro'], equipo: 'Equipo NutriSalud',
+                texto: 'Wraps con vegetales frescos, ensaladas de estación, opciones vegetarianas y sándwiches integrales.'
+            },
+            {
+                nombre: 'Desayunos Saludables', foto: 'img/stand/DesayunosSaludables.jpeg', cats: ['gastro', 'dulce'], equipo: 'Equipo Mañanas Sanas',
+                texto: 'Yogur artesanal con granola casera, ensalada de frutas frescas e infusiones naturales, preparados en el momento.'
+            },
+            {
+                nombre: 'Facturas y Panadería', foto: 'img/stand/Facturas.jpeg', cats: ['dulce'], equipo: 'Taller Dulce Sabor',
+                texto: 'Medialunas de manteca, criollitos, vigilantes con dulce de leche o crema pastelera y panificados caseros.'
+            },
+            {
+                nombre: 'Galletas Artesanales', foto: 'img/stand/Galletas.jpeg', cats: ['dulce'], equipo: 'Equipo Galletitas N° 43',
+                texto: 'Galletas de avena con chips de chocolate, alfajores de maicena y galletitas decoradas para regalar.'
+            },
+            {
+                nombre: 'Luz de Pétalo', foto: 'img/stand/LuzPetalo.jpg', cats: ['arte'], equipo: 'Equipo Luz de Pétalo',
+                texto: 'Lámparas artesanales con forma de flor, hechas a mano por los estudiantes. Ideales para regalar o decorar.'
+            },
+            {
+                nombre: 'Licuados y Smoothies', foto: 'img/stand/Licuados.jpeg', cats: ['bebidas'], equipo: 'Bar Citrus & Menta',
+                texto: 'Frutilla, banana, naranja, durazno y menta fresca, licuados al instante y bien fríos.'
+            },
+            {
+                nombre: 'Pizza Planeta', foto: 'img/stand/PizzaPlaneta.jpg', cats: ['gastro'], equipo: 'Equipo Pizza Planeta',
+                texto: 'Pizzas de salame y de mortadela, "el sabor de otro planeta". Promo: las dos con gaseosa a $8.000.',
+                menu: {
+                    imagen: 'img/stand/MenuPizzaPlaneta-recorte.jpg',
+                    items: [['Pizza de salame + pizza de mortadela + gaseosa', '$8.000']]
+                }
+            },
+            {
+                nombre: 'Sabor Caserito', foto: 'img/stand/SaborCaserito.jpg', cats: ['gastro'], equipo: 'Equipo Sabor Caserito',
+                texto: 'Empanadas de pollo hechas al horno de barro, con ají casero. El verdadero sabor de lo casero.',
+                menu: {
+                    imagen: 'img/stand/MenuSaborCaserito.jpg',
+                    items: [['Empanada (unidad)', '$1.500'], ['Media docena', '$5.000'], ['Docena', '$10.000']]
+                }
+            },
+            {
+                nombre: 'Sushi Dulce y Raspadillas', foto: 'img/stand/postres.jpeg', cats: ['dulce'], equipo: 'Mesa Dulce Estudiantil',
+                texto: 'Tartas de frutilla, cheesecake, chocotorta en vasito, tiramisú y postres fríos.'
+            },
+            {
+                nombre: 'Ramos y Arreglos Florales', foto: 'img/stand/RamosyFlores.jpeg', cats: ['arte'], equipo: 'Taller Floral N° 43',
+                texto: 'Arreglos artesanales, macetas intervenidas, suculentas y ramos personalizados.'
+            },
+            {
+                nombre: 'Tacos Tradicionales', foto: 'img/stand/Tacos.jpeg', cats: ['gastro'], equipo: 'Tacos El Camaleón',
+                texto: 'Tortillas caseras con carne sazonada, pollo desmenuzado, verduras salteadas y aderezos criollos.'
+            },
+        ];
+
+        const CAT = {
+            gastro: { nombre: 'Comida', color: 'var(--ocre)' },
+            dulce: { nombre: 'Dulces', color: 'var(--rosa)' },
+            bebidas: { nombre: 'Bebidas y helados', color: 'var(--cielo)' },
+            arte: { nombre: 'Flores y regalos', color: 'var(--violeta)' },
+        };
+
+        // --- Conexión con Firebase (solo si está configurado) ---
+        let db = null, fb = null;
+        if (FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.databaseURL) {
+            try {
+                const V = '10.12.2';
+                const appMod = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`);
+                fb = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-database.js`);
+                db = fb.getDatabase(appMod.initializeApp(FIREBASE_CONFIG));
+            } catch (e) { console.warn('No se pudo conectar con Firebase:', e); db = null; }
+        }
+
+        // Convierte "Licuados y Smoothies" en "licuados-y-smoothies" (clave en la base)
+        const clave = t => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+        // Estrellas que puso este visitante en cada stand (se recuerdan en su celular)
+        let misVotos = {};
+        try { misVotos = JSON.parse(localStorage.getItem('expo43-estrellas')) || {}; } catch (e) { }
+
+        // --- Pintar stands ---
+        const lista = document.getElementById('listaStands');
+        let favoritos = [];
+        try { favoritos = JSON.parse(localStorage.getItem('expo43-favs')) || []; } catch (e) { }
+
+        STANDS.forEach((s, i) => {
+            const n = String(i + 1).padStart(2, '0');
+            const cat = CAT[s.cats[0]];
+            const id = clave(s.nombre);
+            const esFav = favoritos.includes(id);
+            const art = document.createElement('article');
+            art.className = 'stand revelar';
+            art.dataset.cats = s.cats.join(' ');
+            art.style.setProperty('--c', cat.color);
+            art.style.setProperty('--d', `${(i % 3) * 0.08}s`);
+            art.innerHTML = `
+        <div class="stand-foto">
+          <img src="${s.foto}" alt="Stand ${s.nombre}" loading="lazy"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x450/c8ecd5/1f8a4c?text=${encodeURIComponent(s.nombre)}';">
+          <span class="stand-num">N° ${n}</span>
+          <span class="stand-medalla" id="medalla-${id}" hidden></span>
+        </div>
+        <div class="stand-cuerpo">
+          <span class="stand-cat">${s.cats.map(c => CAT[c].nombre).join(' · ')}</span>
+          <h3>${s.nombre}</h3>
+          <p>${s.texto}</p>
+          <button type="button" class="ver-menu">
+            <i class="fa-solid fa-utensils"></i> ${s.menu ? 'Ver menú y precios' : 'Ver menú'}
+          </button>
+          <div class="ganas">
+            <span class="ganas-titulo">¿Cuántas ganas tenés de probarlo?</span>
+            <div class="ganas-fila">
+              <div class="estrellas" role="group" aria-label="Ganas de probar ${s.nombre}">
+                ${[5, 4, 3, 2, 1].map(v => `<button type="button" data-v="${v}" aria-label="${v} de 5 estrellas" aria-pressed="false">★</button>`).join('')}
+              </div>
+              <span class="promedio" id="prom-${id}"></span>
+            </div>
+          </div>
+          <div class="stand-pie">
+            <span>${s.equipo}</span>
+            <span class="fav-caja">
+              <span class="fav-num" id="likes-${id}" aria-label="corazones"></span>
+              <button class="fav" aria-pressed="${esFav}" aria-label="Darle corazón a ${s.nombre}">
+                <i class="fa-${esFav ? 'solid' : 'regular'} fa-heart"></i>
+              </button>
+            </span>
+          </div>
+        </div>`;
+            art.querySelector('.fav').addEventListener('click', e => alternarFav(e.currentTarget, id));
+            art.querySelectorAll('.estrellas button').forEach(b =>
+                b.addEventListener('click', () => votar(id, Number(b.dataset.v), art)));
+            pintarMisEstrellas(art, misVotos[id] || 0);
+            // Clic en la tarjeta (menos en estrellas y corazón) abre el modal con el menú
+            art.addEventListener('click', e => {
+                if (e.target.closest('.estrellas, .fav')) return;
+                abrirModal(s, i);
+            });
+            lista.appendChild(art);
+        });
+        document.getElementById('cantStands').textContent = STANDS.length;
+
+        function alternarFav(btn, id) {
+            const activo = btn.getAttribute('aria-pressed') !== 'true';
+            btn.setAttribute('aria-pressed', activo);
+            btn.querySelector('i').className = `fa-${activo ? 'solid' : 'regular'} fa-heart`;
+            favoritos = activo ? [...favoritos, id] : favoritos.filter(f => f !== id);
+            try { localStorage.setItem('expo43-favs', JSON.stringify(favoritos)); } catch (e) { }
+            mostrarFavs();
+            // Un corazón por stand y por celular: suma 1 al marcar, resta 1 al desmarcar
+            if (db) fb.set(fb.ref(db, `likes/${id}`), fb.increment(activo ? 1 : -1)).catch(e => console.warn(e));
+        }
+        function mostrarFavs() {
+            const c = favoritos.length;
+            document.getElementById('contadorFavs').textContent =
+                c === 0 ? '' : c === 1 ? 'Tenés 1 stand marcado para visitar.' : `Tenés ${c} stands marcados para visitar.`;
+        }
+        mostrarFavs();
+
+        // Contadores en vivo: se actualizan solos cuando alguien toca un corazón
+        if (db) {
+            fb.onValue(fb.ref(db, 'likes'), snap => {
+                const datos = snap.val() || {};
+                STANDS.forEach(s => {
+                    const id = clave(s.nombre);
+                    const el = document.getElementById(`likes-${id}`);
+                    if (el) el.textContent = Math.max(0, datos[id] || 0);
+                });
+            });
+        }
+
+        // --- Estrellas: ganas de probar ---
+        function pintarMisEstrellas(art, valor) {
+            art.querySelectorAll('.estrellas button').forEach(b => {
+                const v = Number(b.dataset.v);
+                b.classList.toggle('on', v <= valor);
+                b.setAttribute('aria-pressed', v === valor);
+            });
+        }
+
+        async function votar(id, valor, art) {
+            const anterior = misVotos[id] || 0;
+            if (valor === anterior) return;
+            if (!db) {
+                document.getElementById(`prom-${id}`).textContent = 'Votación no conectada';
+                return;
+            }
+            pintarMisEstrellas(art, valor);
+            const btn = art.querySelector(`.estrellas button[data-v="${valor}"]`);
+            btn.classList.remove('salto'); void btn.offsetWidth; btn.classList.add('salto');
+            // Cada persona vota una vez por stand; si cambia de opinión, se corrige la suma sin contar otro voto
+            const cambios = { [`estrellas/${id}/suma`]: fb.increment(valor - anterior) };
+            if (!anterior) cambios[`estrellas/${id}/votos`] = fb.increment(1);
+            try {
+                await fb.update(fb.ref(db), cambios);
+                misVotos[id] = valor;
+                try { localStorage.setItem('expo43-estrellas', JSON.stringify(misVotos)); } catch (e) { }
+            } catch (err) {
+                console.warn(err);
+                pintarMisEstrellas(art, anterior);
+                document.getElementById(`prom-${id}`).textContent = 'No se pudo guardar';
+            }
+        }
+
+        const coma = n => n.toFixed(1).replace('.', ',');
+        const MEDALLAS = ['1° más buscado', '2° más buscado', '3° más buscado'];
+
+        if (db) {
+            fb.onValue(fb.ref(db, 'estrellas'), snap => {
+                const datos = snap.val() || {};
+                const lista = STANDS.map(s => {
+                    const id = clave(s.nombre);
+                    const d = datos[id] || {};
+                    const votos = Math.max(0, d.votos || 0);
+                    const prom = votos ? Math.min(5, Math.max(0, (d.suma || 0) / votos)) : 0;
+                    const el = document.getElementById(`prom-${id}`);
+                    if (el) el.innerHTML = votos
+                        ? `<b>${coma(prom)}</b> de 5 · ${votos} ${votos === 1 ? 'voto' : 'votos'}`
+                        : 'Sé el primero en votar';
+                    return { ...s, id, votos, prom };
+                });
+
+                // Ranking: primero el promedio más alto; si empatan, el que tiene más votos
+                const orden = lista.filter(s => s.votos > 0)
+                    .sort((a, b) => b.prom - a.prom || b.votos - a.votos || a.nombre.localeCompare(b.nombre));
+                document.getElementById('ranking').hidden = orden.length === 0;
+                document.getElementById('rankingLista').innerHTML = orden.slice(0, 5).map((s, i) => `
+                    <li class="rank-fila" style="--c:${CAT[s.cats[0]].color}">
+                        <span class="rank-pos">${i + 1}</span>
+                        <div>
+                            <span class="rank-nombre">${s.nombre}</span>
+                            <div class="rank-barra"><span style="--w:${Math.round(s.prom / 5 * 100)}%"></span></div>
+                        </div>
+                        <span class="rank-num"><b><i>★</i>${coma(s.prom)}</b><small>${s.votos} ${s.votos === 1 ? 'voto' : 'votos'}</small></span>
+                    </li>`).join('');
+
+                lista.forEach(s => { const m = document.getElementById(`medalla-${s.id}`); if (m) m.hidden = true; });
+                orden.slice(0, 3).forEach((s, i) => {
+                    const m = document.getElementById(`medalla-${s.id}`);
+                    if (m) { m.textContent = `★ ${MEDALLAS[i]}`; m.hidden = false; }
+                });
+            });
+        }
+
+        // --- Modal del stand (menú) ---
+        const modal = document.getElementById('modalStand');
+        const MENU_PENDIENTE = 'Menú se publicará en breve';
+        function abrirModal(s, i) {
+            const cat = CAT[s.cats[0]];
+            modal.style.setProperty('--c', cat.color);
+            document.getElementById('mFoto').src = s.foto;
+            document.getElementById('mFoto').alt = `Stand ${s.nombre}`;
+            document.getElementById('mCat').textContent = `N° ${String(i + 1).padStart(2, '0')} · ${s.cats.map(c => CAT[c].nombre).join(' · ')}`;
+            document.getElementById('mTitulo').textContent = s.nombre;
+            document.getElementById('mTexto').textContent = s.texto;
+            document.getElementById('mEquipo').textContent = s.equipo;
+            const caja = document.getElementById('mMenu');
+            if (s.menu) {
+                caja.innerHTML = `
+                    <ul class="m-precios">${(s.menu.items || []).map(([p, $]) => `<li><span>${p}</span><b>${$}</b></li>`).join('')}</ul>
+                    ${s.menu.imagen ? `<a href="${s.menu.imagen}" target="_blank" rel="noopener" class="m-menu-img" title="Abrir el menú en grande">
+                        <img src="${s.menu.imagen}" alt="Menú de ${s.nombre}" loading="lazy"></a>` : ''}`;
+            } else {
+                caja.innerHTML = `<p class="m-pendiente"><i class="fa-regular fa-clock"></i> ${MENU_PENDIENTE}</p>`;
+            }
+            modal.querySelector('.modal-cuerpo').scrollTop = 0;
+            modal.showModal();
+            document.documentElement.classList.add('con-modal');
+        }
+        function cerrarModal() {
+            if (!modal.open || modal.classList.contains('cerrando')) return;
+            const terminar = () => { modal.classList.remove('cerrando'); modal.close(); };
+            if (matchMedia('(prefers-reduced-motion: reduce)').matches) return terminar();
+            modal.classList.add('cerrando');
+            setTimeout(terminar, 220);
+        }
+        modal.addEventListener('close', () => document.documentElement.classList.remove('con-modal'));
+        modal.addEventListener('cancel', e => { e.preventDefault(); cerrarModal(); });
+        modal.addEventListener('click', e => { if (e.target === modal) cerrarModal(); });
+        document.getElementById('mCerrar').addEventListener('click', cerrarModal);
+
+        // --- Filtros ---
+        document.querySelectorAll('.filtro').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filtro').forEach(b => b.setAttribute('aria-pressed', 'false'));
+                btn.setAttribute('aria-pressed', 'true');
+                const f = btn.dataset.filtro;
+                document.querySelectorAll('.stand').forEach(card => {
+                    card.hidden = !(f === 'todos' || card.dataset.cats.split(' ').includes(f));
+                });
+            });
+        });
+
+        // --- Cuenta regresiva (hora de Argentina, UTC-3) ---
+        const apertura = new Date('2026-11-13T10:00:00-03:00').getTime();
+        const cierre = new Date('2026-11-13T15:00:00-03:00').getTime();
+        const dos = n => String(n).padStart(2, '0');
+        function tic() {
+            const ahora = Date.now();
+            let d = apertura - ahora;
+            if (d <= 0) {
+                document.getElementById('cuentaTitulo').textContent =
+                    ahora < cierre ? '¡Estamos abiertos, vení!' : '¡Gracias por venir! Nos vemos en 2027';
+                d = 0;
+            }
+            document.getElementById('cd-dias').textContent = dos(Math.floor(d / 864e5));
+            document.getElementById('cd-horas').textContent = dos(Math.floor(d / 36e5) % 24);
+            document.getElementById('cd-min').textContent = dos(Math.floor(d / 6e4) % 60);
+            document.getElementById('cd-seg').textContent = dos(Math.floor(d / 1e3) % 60);
+        }
+        tic(); setInterval(tic, 1000);
+
+        // --- Modo oscuro ---
+        const raiz = document.documentElement;
+        const temaBtn = document.getElementById('temaBtn');
+        const esOscuro = () => raiz.dataset.theme
+            ? raiz.dataset.theme === 'dark'
+            : matchMedia('(prefers-color-scheme: dark)').matches;
+        function pintarIcono() {
+            const o = esOscuro();
+            temaBtn.innerHTML = `<i class="fa-solid fa-${o ? 'sun' : 'moon'}"></i>`;
+            temaBtn.setAttribute('aria-label', o ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+        }
+        try { const t = localStorage.getItem('expo43-tema'); if (t) raiz.dataset.theme = t; } catch (e) { }
+        pintarIcono();
+        temaBtn.addEventListener('click', () => {
+            raiz.dataset.theme = esOscuro() ? 'light' : 'dark';
+            try { localStorage.setItem('expo43-tema', raiz.dataset.theme); } catch (e) { }
+            pintarIcono();
+        });
+
+        // --- Menú en celular ---
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('menuMovil');
+        menuBtn.addEventListener('click', () => {
+            const abierto = menu.classList.toggle('abierto');
+            menuBtn.setAttribute('aria-expanded', abierto);
+            menuBtn.innerHTML = `<i class="fa-solid fa-${abierto ? 'xmark' : 'bars'}"></i>`;
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            menu.classList.remove('abierto');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }));
+
+        // --- Registro de asistencia ---
+        const form = document.getElementById('formRegistro');
+        const msg = document.getElementById('regMsg');
+        const regBtn = document.getElementById('regBtn');
+        const avisar = (texto, tipo) => { msg.textContent = texto; msg.className = `form-msg ${tipo}`; };
+
+        let yaAnotado = null;
+        try { yaAnotado = localStorage.getItem('expo43-anotado'); } catch (e) { }
+        if (yaAnotado) avisar(`Ya te anotaste como ${yaAnotado}. ¡Te esperamos el 13!`, 'ok');
+
+        form.addEventListener('submit', async e => {
+            e.preventDefault();
+            const nombre = document.getElementById('regNombre').value.trim().replace(/\s+/g, ' ');
+            const tipo = form.querySelector('input[name="tipo"]:checked')?.value;
+            if (nombre.length < 2) return avisar('Escribí tu nombre y apellido.', 'error');
+            if (!tipo) return avisar('Elegí cómo venís: comunidad educativa, alumno o público en general.', 'error');
+            if (!db) return avisar('El registro todavía no está conectado. Probá de nuevo más tarde.', 'error');
+
+            regBtn.disabled = true;
+            try {
+                await fb.push(fb.ref(db, 'asistencia'), { nombre, tipo, fecha: fb.serverTimestamp() });
+                await fb.set(fb.ref(db, `totales/${tipo}`), fb.increment(1));
+                try { localStorage.setItem('expo43-anotado', nombre); } catch (e) { }
+                form.reset();
+                avisar(`¡Listo, ${nombre}! Quedaste anotado. Te esperamos el viernes 13.`, 'ok');
+            } catch (err) {
+                console.warn(err);
+                avisar('No se pudo guardar. Revisá tu conexión e intentá de nuevo.', 'error');
+            } finally {
+                regBtn.disabled = false;
+            }
+        });
+
+        // Totales en vivo (solo números: los nombres no se muestran a nadie)
+        if (db) {
+            fb.onValue(fb.ref(db, 'totales'), snap => {
+                document.getElementById('totales').hidden = false;
+                const t = snap.val() || {};
+                const c = t.comunidad || 0, a = t.alumno || 0, p = t.publico || 0;
+                document.getElementById('tot-comunidad').textContent = c;
+                document.getElementById('tot-alumno').textContent = a;
+                document.getElementById('tot-publico').textContent = p;
+                document.getElementById('tot-todos').textContent = c + a + p;
+            });
+        }
+
+        // --- Efectos de scroll ---
+        const barra = document.getElementById('progreso');
+        const franjas = [...document.querySelectorAll('.hero-cerro path')];
+        const sinMovimiento = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let pendiente = false;
+        function alScrollear() {
+            pendiente = false;
+            const h = document.documentElement;
+            const total = h.scrollHeight - h.clientHeight;
+            barra.style.setProperty('--p', total > 0 ? h.scrollTop / total : 0);
+            if (!sinMovimiento && h.scrollTop < 900) {
+                // Las franjas del cerro se acomodan a distinta velocidad al bajar (efecto parallax)
+                franjas.forEach((f, i) => { f.style.transform = `translateY(${h.scrollTop * (franjas.length - i) * 0.012}px)`; });
+            }
+        }
+        addEventListener('scroll', () => { if (!pendiente) { pendiente = true; requestAnimationFrame(alScrollear); } }, { passive: true });
+        alScrollear();
+
+        // Las secciones aparecen cuando entran en pantalla
+        if (!sinMovimiento && 'IntersectionObserver' in window) {
+            document.documentElement.classList.add('anim');
+            const obs = new IntersectionObserver(entradas => {
+                entradas.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.revelar, .titulo').forEach(el => obs.observe(el));
+        }
+    </script>
+</body>
+
+</html>

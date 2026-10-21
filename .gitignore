@@ -1,0 +1,10 @@
+# Configuración local de herramientas (no hace falta subirla)
+.claude/
+.gemini/
+.impeccable/
+plugin/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini

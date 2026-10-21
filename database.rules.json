@@ -1,0 +1,42 @@
+{
+  "rules": {
+    "likes": {
+      ".read": true,
+      "$stand": {
+        ".write": true,
+        ".validate": "newData.isNumber() && newData.val() >= 0 && ((!data.exists() && newData.val() == 1) || (data.exists() && (newData.val() == data.val() + 1 || newData.val() == data.val() - 1)))"
+      }
+    },
+    "estrellas": {
+      ".read": true,
+      "$stand": {
+        ".write": true,
+        "votos": {
+          ".validate": "newData.isNumber() && newData.val() == (data.exists() ? data.val() : 0) + 1"
+        },
+        "suma": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() - (data.exists() ? data.val() : 0) >= -4 && newData.val() - (data.exists() ? data.val() : 0) <= 5 && newData.val() <= newData.parent().child('votos').val() * 5"
+        },
+        "$otro": { ".validate": false }
+      }
+    },
+    "totales": {
+      ".read": true,
+      "$tipo": {
+        ".write": "$tipo === 'comunidad' || $tipo === 'alumno' || $tipo === 'publico'",
+        ".validate": "newData.isNumber() && ((!data.exists() && newData.val() == 1) || (data.exists() && newData.val() == data.val() + 1))"
+      }
+    },
+    "asistencia": {
+      ".read": false,
+      "$id": {
+        ".write": "!data.exists()",
+        ".validate": "newData.hasChildren(['nombre', 'tipo', 'fecha'])",
+        "nombre": { ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 60" },
+        "tipo": { ".validate": "newData.val() === 'comunidad' || newData.val() === 'alumno' || newData.val() === 'publico'" },
+        "fecha": { ".validate": "newData.val() === now" },
+        "$otro": { ".validate": false }
+      }
+    }
+  }
+}
