@@ -1462,6 +1462,37 @@
             }
         }
 
+        /* ---------- STAND SIN FOTO TODAVÍA ---------- */
+        .sin-foto {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-content: center;
+            justify-items: center;
+            gap: 8px;
+            color: var(--c, var(--verde));
+            font-weight: 700;
+            background:
+                repeating-linear-gradient(-45deg, transparent 0 14px, color-mix(in srgb, var(--c, var(--verde)) 10%, transparent) 14px 28px),
+                color-mix(in srgb, var(--c, var(--verde)) 12%, var(--papel));
+        }
+
+        .sin-foto i {
+            font-size: 2.2rem;
+        }
+
+        .modal-foto.vacia {
+            aspect-ratio: auto;
+            height: 140px;
+            background:
+                repeating-linear-gradient(-45deg, transparent 0 14px, color-mix(in srgb, var(--c) 10%, transparent) 14px 28px),
+                color-mix(in srgb, var(--c) 12%, var(--papel));
+        }
+
+        .modal-foto.vacia img {
+            display: none;
+        }
+
         /* ---------- TARJETA: VER MENÚ ---------- */
         .stand {
             cursor: pointer;
@@ -1788,8 +1819,7 @@
 
                     <p class="hero-intro">
                         La fórmula del emprendedor, puesta a prueba por los estudiantes del
-                        <em>Colegio Secundario N° 43 "Puerto Argentino"</em>: once stands con comida,
-                        licuados, repostería, flores y mucho más, todos pensados y armados por ellos.
+                        <em>Colegio Secundario N° 43 "Puerto Argentino"</em>: <span id="cantStandsTexto">doce</span> stands con comida, licuados, repostería, artesanías y mucho más, todos pensados y armados por ellos.
                     </p>
 
                     <div class="hero-cta">
@@ -1867,7 +1897,7 @@
                     <button class="filtro" data-filtro="bebidas" aria-pressed="false"
                         style="--c:var(--cielo)"><i></i>Bebidas y helados</button>
                     <button class="filtro" data-filtro="arte" aria-pressed="false"
-                        style="--c:var(--violeta)"><i></i>Flores y regalos</button>
+                        style="--c:var(--violeta)"><i></i>Artesanías y regalos</button>
                 </div>
 
                 <div class="stands" id="listaStands"><!-- se completa desde el script (lista STANDS) --></div>
@@ -2080,11 +2110,13 @@
            Para sumar el menú de un stand, agregale:
              menu: { imagen: 'img/stand/MenuX.jpg', items: [['Producto', '$precio'], ...] }
            Si no tiene "menu", el modal dice que se publicará en breve.
+           Si todavía no hay foto, dejá  foto: ''  y se muestra un cartel de "Foto pronto".
+           "id" sirve para cambiarle el nombre a un stand sin perder sus votos y corazones.
            ========================================================= */
         const STANDS = [
             {
-                nombre: 'Jabones Artesanales', foto: 'img/stand/ComidaSaludable.jpeg', cats: ['gastro'], equipo: 'Equipo NutriSalud',
-                texto: 'Wraps con vegetales frescos, ensaladas de estación, opciones vegetarianas y sándwiches integrales.'
+                nombre: 'Jabones Artesanales', foto: 'img/stand/ComidaSaludable.jpeg', cats: ['arte'], equipo: 'Equipo Jabones Artesanales',
+                texto: 'Jabones artesanales 100 % naturales, hechos a mano por los estudiantes. Ideales para regalar o para uso diario.'
             },
             {
                 nombre: 'Desayunos Saludables', foto: 'img/stand/DesayunosSaludables.jpeg', cats: ['gastro', 'dulce'], equipo: 'Equipo Mañanas Sanas',
@@ -2103,8 +2135,8 @@
                 texto: 'Lámparas artesanales con forma de flor, hechas a mano por los estudiantes. Ideales para regalar o decorar.'
             },
             {
-                nombre: 'Licuados y Smoothies', foto: 'img/stand/Licuados.jpeg', cats: ['bebidas'], equipo: 'Bar Citrus & Menta',
-                texto: 'Frutilla, banana, naranja, durazno y menta fresca, licuados al instante y bien fríos.'
+                nombre: 'Sabor Juego', id: 'licuados-y-smoothies', foto: 'img/stand/Licuados.jpeg', cats: ['bebidas'], equipo: 'Equipo Sabor Juego',
+                texto: 'Venta de jugos y licuados con frutas naturales. "Tus licuados de aventura", preparados en el momento.'
             },
             {
                 nombre: 'Pizza Planeta', foto: 'img/stand/PizzaPlaneta.jpg', cats: ['gastro'], equipo: 'Equipo Pizza Planeta',
@@ -2113,6 +2145,10 @@
                     imagen: 'img/stand/MenuPizzaPlaneta-recorte.jpg',
                     items: [['Pizza de salame + pizza de mortadela + gaseosa', '$8.000']]
                 }
+            },
+            {
+                nombre: 'Alto Sabor', id: 'pizzas-y-tacos', foto: 'img/stand/PizzasyTacos.jpeg', cats: ['gastro'], equipo: 'Equipo Alto Sabor',
+                texto: 'Pizzas y tacos con todo el sabor. El menú se publicará en breve.'
             },
             {
                 nombre: 'Sabor Caserito', foto: 'img/stand/SaborCaserito.jpg', cats: ['gastro'], equipo: 'Equipo Sabor Caserito',
@@ -2127,8 +2163,8 @@
                 texto: 'Tartas de frutilla, cheesecake, chocotorta en vasito, tiramisú y postres fríos.'
             },
             {
-                nombre: 'Ramos y Arreglos Florales', foto: 'img/stand/RamosyFlores.jpeg', cats: ['arte'], equipo: 'Taller Floral N° 43',
-                texto: 'Arreglos artesanales, macetas intervenidas, suculentas y ramos personalizados.'
+                nombre: 'Elaboración de Empanadas', foto: '', cats: ['gastro'], equipo: 'Equipo de Empanadas',
+                texto: 'Empanadas elaboradas por los estudiantes. Pronto vamos a publicar la foto y el menú.'
             },
             {
                 nombre: 'Tacos Tradicionales', foto: 'img/stand/Tacos.jpeg', cats: ['gastro'], equipo: 'Tacos El Camaleón',
@@ -2140,7 +2176,7 @@
             gastro: { nombre: 'Comida', color: 'var(--ocre)' },
             dulce: { nombre: 'Dulces', color: 'var(--rosa)' },
             bebidas: { nombre: 'Bebidas y helados', color: 'var(--cielo)' },
-            arte: { nombre: 'Flores y regalos', color: 'var(--violeta)' },
+            arte: { nombre: 'Artesanías y regalos', color: 'var(--violeta)' },
         };
 
         // --- Conexión con Firebase (solo si está configurado) ---
@@ -2161,6 +2197,15 @@
         let misVotos = {};
         try { misVotos = JSON.parse(localStorage.getItem('expo43-estrellas')) || {}; } catch (e) { }
 
+        // Cartel "Foto pronto" para stands sin imagen (o si la imagen no carga)
+        const CARTEL_SIN_FOTO = '<i class="fa-solid fa-camera"></i><span>Foto pronto</span>';
+        window.sinFoto = img => {
+            const d = document.createElement('div');
+            d.className = 'sin-foto';
+            d.innerHTML = CARTEL_SIN_FOTO;
+            img.replaceWith(d);
+        };
+
         // --- Pintar stands ---
         const lista = document.getElementById('listaStands');
         let favoritos = [];
@@ -2169,7 +2214,7 @@
         STANDS.forEach((s, i) => {
             const n = String(i + 1).padStart(2, '0');
             const cat = CAT[s.cats[0]];
-            const id = clave(s.nombre);
+            const id = clave(s.id || s.nombre);
             const esFav = favoritos.includes(id);
             const art = document.createElement('article');
             art.className = 'stand revelar';
@@ -2178,8 +2223,9 @@
             art.style.setProperty('--d', `${(i % 3) * 0.08}s`);
             art.innerHTML = `
         <div class="stand-foto">
-          <img src="${s.foto}" alt="Stand ${s.nombre}" loading="lazy"
-               onerror="this.onerror=null;this.src='https://placehold.co/600x450/c8ecd5/1f8a4c?text=${encodeURIComponent(s.nombre)}';">
+          ${s.foto
+            ? `<img src="${s.foto}" alt="Stand ${s.nombre}" loading="lazy" onerror="sinFoto(this)">`
+            : `<div class="sin-foto">${CARTEL_SIN_FOTO}</div>`}
           <span class="stand-num">N° ${n}</span>
           <span class="stand-medalla" id="medalla-${id}" hidden></span>
         </div>
@@ -2221,6 +2267,9 @@
             lista.appendChild(art);
         });
         document.getElementById('cantStands').textContent = STANDS.length;
+        document.getElementById('cantStandsTexto').textContent =
+            ['cero', 'un', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez', 'once', 'doce', 'trece', 'catorce', 'quince',
+             'dieciséis', 'diecisiete', 'dieciocho', 'diecinueve', 'veinte'][STANDS.length] || STANDS.length;
 
         function alternarFav(btn, id) {
             const activo = btn.getAttribute('aria-pressed') !== 'true';
@@ -2244,7 +2293,7 @@
             fb.onValue(fb.ref(db, 'likes'), snap => {
                 const datos = snap.val() || {};
                 STANDS.forEach(s => {
-                    const id = clave(s.nombre);
+                    const id = clave(s.id || s.nombre);
                     const el = document.getElementById(`likes-${id}`);
                     if (el) el.textContent = Math.max(0, datos[id] || 0);
                 });
@@ -2291,7 +2340,7 @@
             fb.onValue(fb.ref(db, 'estrellas'), snap => {
                 const datos = snap.val() || {};
                 const lista = STANDS.map(s => {
-                    const id = clave(s.nombre);
+                    const id = clave(s.id || s.nombre);
                     const d = datos[id] || {};
                     const votos = Math.max(0, d.votos || 0);
                     const prom = votos ? Math.min(5, Math.max(0, (d.suma || 0) / votos)) : 0;
@@ -2330,7 +2379,8 @@
         function abrirModal(s, i) {
             const cat = CAT[s.cats[0]];
             modal.style.setProperty('--c', cat.color);
-            document.getElementById('mFoto').src = s.foto;
+            modal.querySelector('.modal-foto').classList.toggle('vacia', !s.foto);
+            document.getElementById('mFoto').src = s.foto || '';
             document.getElementById('mFoto').alt = `Stand ${s.nombre}`;
             document.getElementById('mCat').textContent = `N° ${String(i + 1).padStart(2, '0')} · ${s.cats.map(c => CAT[c].nombre).join(' · ')}`;
             document.getElementById('mTitulo').textContent = s.nombre;
